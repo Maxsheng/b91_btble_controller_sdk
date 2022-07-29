@@ -7,7 +7,6 @@ extraction:
   cpp:
     prepare:    # Customizable step used by all languages.
       packages:
-        - gcc-10-riscv64-linux-gnu-base
     after_prepare:    # Customizable step used by all languages.
       - export GNU_MAKE=make
       - export GIT=true
@@ -16,8 +15,8 @@ extraction:
         - echo "no configure"
     before_index:    # Customizable step used by all languages.
       - echo $PATH
-      - export RISCV="$(PWD)/tool_chain"
-      - export PATH="$(RISCV):$PATH"
+      - RISCV="$PWD/tool_chain"
+      - export PATH="$RISCV:$PATH"
       - echo $PATH
 
     index:    # Customizable step used by all languages.
