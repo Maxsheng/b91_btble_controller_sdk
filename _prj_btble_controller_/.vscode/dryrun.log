@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/push_github_b91_btble_controller/b91_btble_controller_sdk/_prj_btble_controller_'
+echo 'Building file: ../vendor/common/app_hw_timer.c'
+echo 'Invoking: GNU RISC-V Cross C Compiler'
+riscv32-elf-gcc -mcmodel=medium -mcmodel=medium -O2 -fmessage-length=0 -ffunction-sections -fdata-sections -flto  -g3 -DPROJ_BTBLE_CONTROLLER=1 -I"/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/b91_btble_controller_sdk/common" -I"/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/b91_btble_controller_sdk/drivers/B91" -I"/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/b91_btble_controller_sdk/incs" -I"/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/b91_btble_controller_sdk/stack" -I"/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/b91_btble_controller_sdk" -c -fmessage-length=0 -fno-builtin -fomit-frame-pointer -fno-strict-aliasing -fshort-wchar -mext-dsp  -fpack-struct  -fno-delete-null-pointer-checks -MMD -MP -MF"vendor/common/app_hw_timer.d" -MT"vendor/common/app_hw_timer.o" -c -o "vendor/common/app_hw_timer.o" "../vendor/common/app_hw_timer.c"
+echo 'Finished building: ../vendor/common/app_hw_timer.c'
+echo ' '
+make: Leaving directory '/home/xinsheng/work/codeql-repo/test/BTBLE_SDK/push_github_b91_btble_controller/b91_btble_controller_sdk/_prj_btble_controller_'
+ 
