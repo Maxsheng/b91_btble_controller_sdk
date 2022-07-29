@@ -7,6 +7,7 @@ extraction:
   cpp:
     prepare:    # Customizable step used by all languages.
       packages:
+      - build-essential
     after_prepare:    # Customizable step used by all languages.
       - export GNU_MAKE=make
       - export GIT=true
@@ -18,6 +19,7 @@ extraction:
       - RISCV="$PWD/tool_chain"
       - export PATH="$RISCV:$PATH"
       - echo $PATH
+      - ls -al ./tool_chain/
 
     index:    # Customizable step used by all languages.
       build_command:
