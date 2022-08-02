@@ -15,11 +15,16 @@ extraction:
       command:
         - echo "no configure"
     before_index:    # Customizable step used by all languages.
-      - echo $PATH
-      - RISCV="$PWD/tool_chain"
+      - wget -O riscv.tar https://github.com/andestech/Andes-Development-Kit/releases/download/ast-v3_2_3-release-linux/nds32le-elf-mculib-v5f.txz
+      - ls
+      - tar xf riscv.tar
+      - ls
+      - cd nds32le-elf-mculib-v5f
+      - RISCV="$PWD/bin"
       - export PATH="$RISCV:$PATH"
       - echo $PATH
-      - ls -al ./tool_chain/
+      - cd ..
+      - ls
 
     index:    # Customizable step used by all languages.
       build_command:
