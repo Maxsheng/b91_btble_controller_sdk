@@ -8,8 +8,10 @@ extraction:
     prepare:    # Customizable step used by all languages.
       packages:
       - build-essential
-      - libncurses5
-      
+      - lib32ncurses6
+      - lib32ncurses5
+      - lib32ncursesw5
+
     after_prepare:    # Customizable step used by all languages.
       - export GNU_MAKE=make
       - export GIT=true
@@ -17,6 +19,16 @@ extraction:
       command:
         - echo "no configure"
     before_index:    # Customizable step used by all languages.
+      - dpkg --print-architecture
+      - dpkg --print-foreign-architectures
+      - ldconfig -p | grep "libncurses"
+      - uname -a
+      # - ln -s /lib32/libncurses.so.6 /lib32/libncurses.so.5
+      - mkdir pc_lib
+      - ln -s /lib32/libncurses.so.6 ./pc_lib/libncurses.so.5
+      - LIB32_CURSES="$PWD/pc_lib"
+      - export LD_LIBRARY_PATH="$LIB32_CURSES:$LD_LIBRARY_PATH"
+      - echo $LD_LIBRARY_PATH
       - wget -O riscv.tar https://github.com/andestech/Andes-Development-Kit/releases/download/ast-v3_2_3-release-linux/nds32le-elf-mculib-v5f.txz
       - ls
       - tar xf riscv.tar
